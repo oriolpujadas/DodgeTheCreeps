@@ -1,4 +1,5 @@
 extends Area2D
+signal hit
 
 
 export var speed = 400 #velocitat del jugadro
@@ -39,3 +40,15 @@ func _process(delta):
 		$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
 	
+
+
+func _on_Player_body_entered(body):
+	hide() # El jugador desapareix després de ser impactat.
+	emit_signal("hit")
+# S'ha d'ajornar, ja que no podem canviar les propietats físiques en una crida de retorn de física.
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
