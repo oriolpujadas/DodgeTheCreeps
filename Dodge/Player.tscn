@@ -10,7 +10,7 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "up",
+"name": "up2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
@@ -29,7 +29,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-animation = "up"
+animation = "up2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
